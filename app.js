@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const port = 3030
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -30,6 +31,6 @@ app.get('/turing', function(req, res) {
     res.sendFile(path.join(__dirname, '/views/turing.html'))
 })
 
-app.listen(3030, () =>
-console.log('Server On')
+app.listen(port, () =>
+console.log(`Server On en http://localhost:${port}/`)
 );
